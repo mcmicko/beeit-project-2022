@@ -413,3 +413,53 @@ summary {
     display: none;
   }
 }
+
+.section-4 {
+  width: 100%;
+
+  h1 {
+    margin-bottom: 36px;
+  }
+
+  .text-content {
+    position: relative;
+    margin-right: 120px;
+    margin-bottom: 16px;
+    @media (max-width: 360px) {
+      margin-right: 0;
+    }
+
+    img {
+      position: absolute;
+    }
+    p {
+      margin-left: 20px;
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    @media (max-width: 360px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .white {
+    padding: 210px;
+    @media (max-width: 360px) {
+      padding: 64px 0px 0px 24px;
+    }
+  }
+
+  .purple {
+    background-color: #3a3d56;
+    color: #fff;
+    padding: 210px;
+    @media (max-width: 360px) {
+      padding: 64px 0px 0px 24px;
+    }
+  }
+}
