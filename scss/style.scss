@@ -463,3 +463,47 @@ summary {
     }
   }
 }
+
+.section-5 {
+  width: 100%;
+  height: 606px;
+
+  .container {
+    display: flex;
+    padding: 48px 210px;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 360px) {
+      flex-direction: column;
+      padding: 0;
+    }
+
+    img {
+      @media (max-width: 360px) {
+        width: 312px;
+        height: 276px;
+      }
+    }
+
+    .vintage-letter {
+      text-align: center;
+      margin: 0 300px;
+      @media (max-width: 360px) {
+        margin: 24px 24px;
+        text-align: left;
+      }
+
+      h1 {
+        font-weight: 700;
+        color: #1e266d;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+
+.section-6 {
+  width: 100%;
+  height: 740px;
+  background-color: #8d92b6;
+}
