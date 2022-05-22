@@ -10,19 +10,29 @@
 
 .hide {
   display: none;
-  height: 100vh;
-}
-
-@media (max-width: 360px) {
-  .bg-gray {
-    background-color: rgba(0, 0, 0, 0.329);
-    height: 100vh;
-  }
+  z-index: 100;
 }
 
 header {
   width: 100%;
   height: auto;
+  position: fixed;
+  z-index: 100;
+  background-color: #fff;
+}
+@media (max-width: 360px) {
+  header {
+    height: 58px;
+    box-shadow: 0px 1px 5px rgb(66, 66, 66);
+  }
+}
+@media (max-width: 360px) {
+  header .bg-gray {
+    background-color: rgba(0, 0, 0, 0.329);
+    height: 100px;
+    width: 126px;
+    z-index: 100;
+  }
 }
 header .header-container {
   display: flex;
@@ -43,14 +53,11 @@ header .header-container .navbar-logo {
   header .header-container .navbar-logo {
     position: absolute;
     top: 0;
-    padding-top: 16px;
+    padding-top: 22px;
   }
 }
 header .header-container .menu {
   position: relative;
-}
-header .header-container .menu.show {
-  visibility: visible;
 }
 @media (max-width: 360px) {
   header .header-container .menu {
@@ -63,6 +70,17 @@ header .header-container .menu.show {
     height: 100vh;
   }
 }
+@media (max-width: 360px) {
+  header .header-container .menu .bg {
+    width: 100%;
+    height: 100vh;
+    left: -234px;
+    top: 59px;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.329);
+    position: absolute;
+  }
+}
 header .header-container .menu a {
   text-decoration: none;
   color: #1e266d;
@@ -70,25 +88,13 @@ header .header-container .menu a {
   size: 16px;
 }
 header .header-container .menu a:focus {
-  font-weight: bold;
+  font-weight: 700;
+  border-bottom: 1px solid #1e266d;
+  padding-bottom: 5px;
 }
 header .header-container .menu-nav {
   list-style: none;
   display: flex;
-}
-header .header-container .menu-nav.show {
-  visibility: visible;
-}
-header .header-container .menu-nav .nav-item {
-  padding: 8px 26px;
-}
-header .header-container .menu-nav .nav-item.show {
-  transform: translate3d(0, 0, 0);
-}
-@media (max-width: 360px) {
-  header .header-container .menu-nav .nav-item {
-    padding: 15px 28px;
-  }
 }
 @media (max-width: 360px) {
   header .header-container .menu-nav {
@@ -96,7 +102,22 @@ header .header-container .menu-nav .nav-item.show {
     left: 0;
     top: 73px;
     position: absolute;
+    z-index: 2;
   }
+}
+header .header-container .menu-nav.show {
+  visibility: visible;
+}
+header .header-container .menu-nav .nav-item {
+  padding: 8px 26px;
+}
+@media (max-width: 360px) {
+  header .header-container .menu-nav .nav-item {
+    padding: 15px 28px;
+  }
+}
+header .header-container .menu-nav .nav-item.show {
+  transform: translate3d(0, 0, 0);
 }
 header .header-container .menu-nav .shop-now-btn {
   background-color: #ef5480;
@@ -106,6 +127,15 @@ header .header-container .menu-nav .shop-now-btn {
   color: white;
   font-weight: bold;
   transition: all 0.1s ease-in-out 0.1s;
+}
+@media (max-width: 360px) {
+  header .header-container .menu-nav .shop-now-btn {
+    position: absolute;
+    width: 154px;
+    bottom: -160px;
+    right: -80px;
+    text-align: center;
+  }
 }
 header .header-container .menu-nav .shop-now-btn a {
   color: white;
@@ -119,18 +149,9 @@ header .header-container .menu-nav .shop-now-btn:hover {
 header .header-container .menu-nav .shop-now-btn:hover a {
   color: #ef5480;
 }
-@media (max-width: 360px) {
-  header .header-container .menu-nav .shop-now-btn {
-    position: absolute;
-    width: 154px;
-    height: 40px;
-    bottom: -160px;
-    right: -73px;
-  }
-}
 header .menu-btn {
   position: absolute;
-  z-index: 3;
+  z-index: 23;
   right: 16px;
   top: 22px;
   cursor: pointer;
@@ -170,7 +191,8 @@ header .menu-btn.close .btn-line:nth-child(3) {
 @media (max-width: 360px) {
   .section-1 {
     flex-direction: column;
-    margin: 50px 0;
+    margin: 0;
+    padding-top: 90px;
     height: 712px;
   }
 }
@@ -198,6 +220,7 @@ header .menu-btn.close .btn-line:nth-child(3) {
 @media (max-width: 360px) {
   .section-1 .info-typewriter {
     margin: 0 24px;
+    padding-bottom: 65px;
   }
 }
 .section-1 .info-typewriter h1 {
@@ -272,10 +295,63 @@ header .menu-btn.close .btn-line:nth-child(3) {
 .section-2 .cards {
   text-align: center;
 }
+.section-2 .cards .img-typewriter {
+  position: relative;
+  width: 575px;
+  height: 400px;
+}
+.section-2 .cards .red {
+  background: url("../images/typewriter red.png") no-repeat;
+  background-position: center;
+  border-radius: 4px;
+}
 @media (max-width: 360px) {
-  .section-2 .cards img {
+  .section-2 .cards .red {
     width: 360px;
+    height: 360px;
+    background-size: contain;
   }
+}
+.section-2 .cards .black {
+  background: url("../images/typewriter black.jpg") no-repeat;
+  background-position: center;
+  border-radius: 4px;
+}
+@media (max-width: 360px) {
+  .section-2 .cards .black {
+    width: 360px;
+    height: 360px;
+    background-size: contain;
+  }
+}
+.section-2 .cards .cont-details {
+  opacity: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: all 300ms ease-out;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.274);
+}
+.section-2 .cards .cont-details:hover {
+  opacity: 1;
+}
+@media (max-width: 360px) {
+  .section-2 .cards .cont-details {
+    display: none;
+  }
+}
+.section-2 .cards .cont-details .desktop-details {
+  position: absolute;
+  border: none;
+  width: 142px;
+  height: 40px;
+  border-radius: 100px;
+  background-color: #ef5480;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
 }
 .section-2 .cards h2 {
   font-size: 24px;
@@ -310,6 +386,7 @@ header .menu-btn.close .btn-line:nth-child(3) {
 }
 @media (max-width: 360px) {
   .section-3 {
+    margin-top: 180px;
     height: 600px;
     background-position: -940px 0;
   }
@@ -434,7 +511,7 @@ summary::-webkit-details-marker {
 }
 @media (max-width: 360px) {
   .section-4 .white {
-    padding: 64px 0px 0px 24px;
+    padding: 64px 24px 64px 24px;
   }
 }
 .section-4 .purple {
@@ -444,7 +521,7 @@ summary::-webkit-details-marker {
 }
 @media (max-width: 360px) {
   .section-4 .purple {
-    padding: 64px 0px 0px 24px;
+    padding: 64px 24px 64px 24px;
   }
 }
 
@@ -551,7 +628,7 @@ summary::-webkit-details-marker {
 }
 .section-6 .tabs label {
   display: block;
-  padding: 16px 75.5px;
+  padding: 16px 76.744px;
   text-align: center;
   color: #6b6e87;
   font-size: 18px;

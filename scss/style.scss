@@ -10,20 +10,30 @@
 
 .hide {
   display: none;
-  height: 100vh;
-}
-
-.bg-gray {
-  @media (max-width: 360px) {
-    background-color: rgba(0, 0, 0, 0.329);
-    height: 100vh;
-  }
+  z-index: 100;
 }
 
 header {
   width: 100%;
   height: auto;
-
+  position: fixed;
+  z-index: 100;
+  background-color: #fff;
+  @media (max-width: 360px) {
+    height: 58px;
+    box-shadow: 0px 1px 5px rgb(66, 66, 66);
+  }
+  .bg-gray {
+    @media (max-width: 360px) {
+      background-color: rgba(0, 0, 0, 0.329);
+      // position: absolute;
+      // display: block;
+      height: 100px;
+      width: 126px;
+      // bottom: 0;
+      z-index: 100;
+    }
+  }
   .header-container {
     display: flex;
     align-items: center;
@@ -39,17 +49,12 @@ header {
       @media (max-width: 360px) {
         position: absolute;
         top: 0;
-        padding-top: 16px;
+        padding-top: 22px;
       }
     }
 
     .menu {
       position: relative;
-
-      &.show {
-        visibility: visible;
-      }
-
       @media (max-width: 360px) {
         background-color: rgb(255, 255, 255);
         width: 234px;
@@ -59,6 +64,19 @@ header {
         top: 0;
         height: 100vh;
       }
+
+      .bg {
+        @media (max-width: 360px) {
+          width: 100%;
+          height: 100vh;
+          left: -234px;
+          top: 59px;
+          z-index: 0;
+          background-color: rgba(0, 0, 0, 0.329);
+          position: absolute;
+        }
+      }
+
       a {
         text-decoration: none;
         color: #1e266d;
@@ -66,33 +84,35 @@ header {
         size: 16px;
 
         &:focus {
-          font-weight: bold;
+          font-weight: 700;
+          border-bottom: 1px solid #1e266d;
+          padding-bottom: 5px;
         }
       }
 
       &-nav {
-        // background-color: yellow;
         list-style: none;
         display: flex;
+        @media (max-width: 360px) {
+          flex-direction: column;
+          left: 0;
+          top: 73px;
+          position: absolute;
+          z-index: 2;
+        }
 
         &.show {
           visibility: visible;
         }
         .nav-item {
           padding: 8px 26px;
+          @media (max-width: 360px) {
+            padding: 15px 28px;
+          }
 
           &.show {
             transform: translate3d(0, 0, 0);
           }
-          @media (max-width: 360px) {
-            padding: 15px 28px;
-          }
-        }
-        @media (max-width: 360px) {
-          flex-direction: column;
-          left: 0;
-          top: 73px;
-          position: absolute;
         }
 
         .shop-now-btn {
@@ -103,6 +123,14 @@ header {
           color: white;
           font-weight: bold;
           transition: all 0.1s ease-in-out 0.1s;
+          @media (max-width: 360px) {
+            position: absolute;
+            width: 154px;
+            // height: 40px;
+            bottom: -160px;
+            right: -80px;
+            text-align: center;
+          }
 
           a {
             color: white;
@@ -118,14 +146,6 @@ header {
               color: #ef5480;
             }
           }
-
-          @media (max-width: 360px) {
-            position: absolute;
-            width: 154px;
-            height: 40px;
-            bottom: -160px;
-            right: -73px;
-          }
         }
       }
     }
@@ -133,7 +153,7 @@ header {
 
   .menu-btn {
     position: absolute;
-    z-index: 3;
+    z-index: 23;
     right: 16px;
     top: 22px;
     cursor: pointer;
@@ -177,7 +197,8 @@ header {
   margin: 0 210px;
   @media (max-width: 360px) {
     flex-direction: column;
-    margin: 50px 0;
+    margin: 0;
+    padding-top: 90px;
     height: 712px;
   }
 
@@ -206,6 +227,7 @@ header {
     margin: 100px 400px;
     @media (max-width: 360px) {
       margin: 0 24px;
+      padding-bottom: 65px;
     }
 
     h1 {
@@ -279,9 +301,59 @@ header {
   .cards {
     text-align: center;
 
-    img {
+    .img-typewriter {
+      position: relative;
+      width: 575px;
+      height: 400px;
+    }
+    .red {
+      background: url("../images/typewriter red.png") no-repeat;
+      background-position: center;
+      border-radius: 4px;
       @media (max-width: 360px) {
         width: 360px;
+        height: 360px;
+        background-size: contain;
+      }
+    }
+    .black {
+      background: url("../images/typewriter black.jpg") no-repeat;
+      background-position: center;
+      border-radius: 4px;
+      @media (max-width: 360px) {
+        width: 360px;
+        height: 360px;
+        background-size: contain;
+      }
+    }
+
+    .cont-details {
+      opacity: 0;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: all 300ms ease-out;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.274);
+      &:hover {
+        opacity: 1;
+      }
+      @media (max-width: 360px) {
+        display: none;
+      }
+
+      .desktop-details {
+        position: absolute;
+
+        border: none;
+        width: 142px;
+        height: 40px;
+        border-radius: 100px;
+        background-color: #ef5480;
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
       }
     }
 
@@ -315,7 +387,10 @@ header {
   background: url("../images/bg.png") no-repeat;
   background-position: center;
   background-size: cover;
+  // background-attachment: fixed;
+
   @media (max-width: 360px) {
+    margin-top: 180px;
     height: 600px;
     background-position: -940px 0;
   }
@@ -451,7 +526,11 @@ summary {
   .white {
     padding: 210px;
     @media (max-width: 360px) {
-      padding: 64px 0px 0px 24px;
+      padding: 64px 24px 64px 24px;
+
+      // padding: 64px 0px 0px 24px;
+      // margin-right: 24px;
+      // margin-bottom: 64px;
     }
   }
 
@@ -460,7 +539,9 @@ summary {
     color: #fff;
     padding: 210px;
     @media (max-width: 360px) {
-      padding: 64px 0px 0px 24px;
+      padding: 64px 24px 64px 24px;
+      // margin-right: 24px;
+      // margin-bottom: 64px;
     }
   }
 }
@@ -565,7 +646,7 @@ summary {
     }
     label {
       display: block;
-      padding: 16px 75.5px;
+      padding: 16px 76.744px;
       // width: 300px;
       // height: 40px;
       text-align: center;
