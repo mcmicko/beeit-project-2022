@@ -26,11 +26,8 @@ header {
   .bg-gray {
     @media (max-width: 360px) {
       background-color: rgba(0, 0, 0, 0.329);
-      // position: absolute;
-      // display: block;
       height: 100px;
       width: 126px;
-      // bottom: 0;
       z-index: 100;
     }
   }
@@ -126,7 +123,6 @@ header {
           @media (max-width: 360px) {
             position: absolute;
             width: 154px;
-            // height: 40px;
             bottom: -160px;
             right: -80px;
             text-align: center;
@@ -424,9 +420,6 @@ header {
   }
 }
 details {
-  // margin: 1rem auto;
-  // padding: 0 1rem;
-  // width: 35em;
   position: relative;
   color: #fff;
   transition: background-color 0.15s;
@@ -456,7 +449,6 @@ details {
   }
 }
 summary {
-  // padding: 1rem 2em 1rem 0;
   display: block;
   margin-left: 20px;
   position: relative;
@@ -527,10 +519,6 @@ summary {
     padding: 210px;
     @media (max-width: 360px) {
       padding: 64px 24px 64px 24px;
-
-      // padding: 64px 0px 0px 24px;
-      // margin-right: 24px;
-      // margin-bottom: 64px;
     }
   }
 
@@ -540,8 +528,6 @@ summary {
     padding: 210px;
     @media (max-width: 360px) {
       padding: 64px 24px 64px 24px;
-      // margin-right: 24px;
-      // margin-bottom: 64px;
     }
   }
 }
@@ -616,8 +602,11 @@ summary {
   .link-lorem {
     color: #ff8aac;
     position: absolute;
-    right: 470px;
+    right: 29%;
     top: 250px;
+    @media (max-width: 1600px) {
+      right: 25%;
+    }
     @media (max-width: 360px) {
       position: static;
       margin-top: 30px;
@@ -625,13 +614,9 @@ summary {
   }
 
   .tabs {
-    // width: 782px;
-    // height: 320px;
     float: none;
-    // list-style: none;
     position: relative;
     margin: 80px 0 0 10px;
-    // text-align: left;
     @media (max-width: 360px) {
       display: none;
     }
@@ -647,8 +632,6 @@ summary {
     label {
       display: block;
       padding: 16px 76.744px;
-      // width: 300px;
-      // height: 40px;
       text-align: center;
       color: #6b6e87;
       font-size: 18px;
@@ -657,7 +640,6 @@ summary {
       border-top: 4px solid #e7e8ef;
       cursor: pointer;
       position: relative;
-      // top: 4px;
       transition: all 0.2s ease-in-out;
       &:hover {
         background: darken(#e7e8ef, 10);
@@ -704,13 +686,11 @@ summary {
 
     [id^="tab"]:checked + label {
       top: 0;
-      // padding: 12px 70px 70px 70px;
       background: #fff;
       border-top: 4px solid #ef5480;
       border-right: 0;
       border-left: 0;
       color: #1e266d;
-      // font-weight: bold;
     }
     [id^="tab"]:checked ~ [id^="tab-content"] {
       display: block;
@@ -1031,11 +1011,8 @@ footer {
     height: 80px;
     margin: 0;
     padding: 0;
-    // flex-direction: row-reverse;
-    // justify-content: space-between;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    // grid-gap: 10px;
     .span-col-2 {
       grid-column: span 3 / auto;
     }

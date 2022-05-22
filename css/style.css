@@ -598,8 +598,13 @@ summary::-webkit-details-marker {
 .section-6 .link-lorem {
   color: #ff8aac;
   position: absolute;
-  right: 470px;
+  right: 29%;
   top: 250px;
+}
+@media (max-width: 1600px) {
+  .section-6 .link-lorem {
+    right: 25%;
+  }
 }
 @media (max-width: 360px) {
   .section-6 .link-lorem {
